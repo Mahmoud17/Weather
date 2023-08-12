@@ -1,0 +1,110 @@
+<html>
+
+<head>
+ <link rel="stylesheet" href="css/all.min.css">
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/style.css">
+ <title>Weather</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container p-2 d-md-flex justify-content-between align-items-center">
+            <div class="logo text-xs-center">
+                <h3 class="text-primary">Weather</h3>
+                <p>Lorem, ipsum dolor.</p>
+            </div>
+            <ul class="d-flex gap-5">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Live Cameras</a></li>
+                <li><a href="#">Photos</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="location d-flex subscribe rounded-pill justify-content-between">
+                <input id="city" type="text" placeholder="Find your location">
+                <button class='btn btn-primary rounded-pill px-5' id="findBtn">Find</button>
+            </div>
+
+            <div class="weather row mt-5">
+                <div class="day col-md-4">
+                    <div>
+                        <div class="d-flex justify-content-between">
+                            <h5 class="today"></h5>
+                            <h5 class="date bold"></h5>
+                        </div>
+                        <div class="content">
+                            <h3 id="foreCity"></h3>
+                            <div class="today-temp-and-icon d-flex justify-content-between">
+                                <h1 id="todayTemp" class="display-1"></h1>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                        <p class="condition"></p>
+                    </div>
+                </div>
+                <div class="day2 text-center col-md-4">
+                    <div>
+                        <div>
+                            <h5 class="tomorrow"></h5>
+                        </div>
+                        <div class="content">
+                            <img src="">
+                            <h3 id="tomorrowTemp"></h3>
+                            <h6 id="tomorrowMin"></h6>
+                        </div>
+                        <p class="condition"></p>
+                    </div>
+                </div>
+                <div class="day3 text-center col-md-4">
+                    <div>
+                        <div>
+                            <h5 class="after"></h5>
+                        </div>
+                        <div class="content">
+                            <img src="">
+                            <h3 id="afterTemp"></h3>
+                            <h6 id="afterMin"></h6>
+                        </div>
+                        <p class="condition"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-7">
+                    <div class="subscribe d-flex justify-content-between rounded-pill p-0">
+                        <input type="text" placeholder="Enter your email to subscribe...">
+                        <button class="btn btn-primary rounded-pill">subscribe</button>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="icons d-flex ">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i>
+                    <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="m-0">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+        </div>
+    </footer>
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
