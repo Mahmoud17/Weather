@@ -15,7 +15,6 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 document.querySelector(".date").innerHTML =  d.getDate() + ' ' + monthNames[d.getMonth()];
 
 dayTag.innerText = dayName
-console.log(dayTag, dayName)
 document.querySelector(".tomorrow").innerHTML = days[(d.getDay()+1) % 6]
 document.querySelector(".after").innerHTML = days[(d.getDay()+2) % 6]
 
@@ -26,8 +25,6 @@ const getWeather = async function(loc) {
     let res = await fetch(url);
     let data = await res.json()
     let forecast = data.forecast.forecastday
-    setTimeout(() => {
-      console.log(data)
     city.innerText = loc
     todayTemp.innerText = data.current.temp_c + '\xB0C';
     tomorrowTemp.innerText = forecast[1].day.maxtemp_c + '\xB0C'
@@ -41,7 +38,7 @@ const getWeather = async function(loc) {
     document.querySelector(".day img").src = forecast[0].day.condition.icon
     document.querySelector(".day2 img").src = forecast[1].day.condition.icon
     document.querySelector(".day3 img").src = forecast[2].day.condition.icon
-    },200)
+    
 
   } catch (error) {
     // TypeError: Failed to fetch
