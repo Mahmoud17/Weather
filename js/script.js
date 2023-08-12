@@ -20,13 +20,14 @@ document.querySelector(".tomorrow").innerHTML = days[(d.getDay()+1) % 6]
 document.querySelector(".after").innerHTML = days[(d.getDay()+2) % 6]
 
 const getWeather = async function(loc) {
-  let url = "http://api.weatherapi.com/v1/forecast.json?key=748eb52c53e64e15967174541230808&q=" + loc + "&days=3"
+  let url = "https://api.weatherapi.com/v1/forecast.json?key=748eb52c53e64e15967174541230808&q=" + loc + "&days=3"
 
   try {
     let res = await fetch(url);
     let data = await res.json()
     let forecast = data.forecast.forecastday
-    console.log(data)
+    setTimeout(() => {
+      console.log(data)
     city.innerText = loc
     todayTemp.innerText = data.current.temp_c + '\xB0C';
     tomorrowTemp.innerText = forecast[1].day.maxtemp_c + '\xB0C'
@@ -40,6 +41,7 @@ const getWeather = async function(loc) {
     document.querySelector(".day img").src = forecast[0].day.condition.icon
     document.querySelector(".day2 img").src = forecast[1].day.condition.icon
     document.querySelector(".day3 img").src = forecast[2].day.condition.icon
+    },200)
 
   } catch (error) {
     // TypeError: Failed to fetch
